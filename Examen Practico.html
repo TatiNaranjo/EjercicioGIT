@@ -1,0 +1,176 @@
+<script>
+    //Ejercicio 1
+
+    var numero1 = 5;
+    var numero2 = 8;
+
+    if( numero1 < numero2) {
+    console.log("numero1 no es mayor que numero2");
+    }
+    if(numero2 >=0  ) {
+console.log("numero2 es positivo");
+}
+    if( numero2 <=0 ) {
+    console.log("numero1 es negativo o distinto de cero");
+    }
+    numero1++;
+    if( ++numero1 != numero2 ) {
+    console.log("Incrementar en 1 unidad el valor de numero1 no lo hace mayor o igual que numero2");
+    }
+</script>
+
+
+
+<script>
+    //Ejercicio 2
+    const Factorial = 5; // Número del que queremos calcular el factorial
+    let res = 1;
+    let otra = 0;
+    for(let i = 1; i <= Factorial; i++) {
+    res *= i;
+    }
+console.log(res);
+</script>
+
+
+
+<script>
+    //Ejercicio 3
+    var numero = 3.2; // introducir numero 
+    
+    console.log (resultado = parImpar(numero));
+    
+    function parImpar(numero) {
+    if(numero % 2 == 0) {
+    return "par";
+    }
+    else {
+    return "impar";
+    }
+
+    console.log(resultado);
+
+    }
+</script>
+
+
+
+<script>
+    // Ejercicio 4
+
+    function palindromo(cadena) {
+
+var resultado = "La cadena \""+cadena+"\" \n";
+
+var cadenaOriginal = cadena.toLowerCase();
+
+
+var letrasEspacios = cadenaOriginal.split("");
+
+
+var cadenaSinEspacios = "";
+for(i in letrasEspacios) {
+  if(letrasEspacios[i] != " ") {
+    cadenaSinEspacios += letrasEspacios[i];
+  }
+}
+
+var letras = cadenaSinEspacios.split("");
+var letrasReves = cadenaSinEspacios.split("").reverse();
+
+
+var iguales = true;
+for(i in letras) {
+  if(letras[i] == letrasReves[i]) {
+    
+  }
+  else {
+   
+    iguales = false;
+  }
+}
+
+if(iguales) {
+  resultado += " es un palíndromo";
+}
+else {
+  resultado += " no es un palíndromo";
+}
+
+return resultado;
+}
+
+console.log(palindromo("La ruta nos aporto otro paso natural"));
+console.log(palindromo("Esta frase no se parece a ningun palindromo"));
+
+</script>
+
+
+
+<script>
+    
+    //Ejercicio 5
+
+    //Clase Persona con las propiedades nombre y edad
+    class Persona {
+        nombre;
+        edad;
+        constructor(edad, nombre){
+            this.nombre= nombre;
+            this.edad= edad;
+        }
+
+        obtDetalles(Persona){
+            if(nombre === this.nombre && edad === this.edad){
+                console.log(persona);
+            }
+        }
+    }
+    class Estudiante extends Persona{
+        calificacion=[];
+                
+        }
+        
+    
+    class Profesor extends Persona{
+        asignatura;
+        nivel;
+        constructor(asignatura, nivel){
+            this.asignatura= nombre;
+            this.nivel= edad;
+
+    }}
+
+</script>
+
+
+
+<script>
+
+function permutacionesCadena(texto) {
+    if (typeof texto != 'string') {
+        throw TypeError('El argumento debe ser una cadena de caracteres.');
+    }
+
+    if (texto.length <= 2) {
+        return texto.length === 2 ? [texto, texto[1] + texto[0]] : [texto];
+    }
+
+    return texto.split('')
+        .reduce((a, c, i) => 
+            a.concat(permutacionesCadena(texto.slice(0, i) + texto.slice(i + 1))
+            .map(v => c + v))
+        , []);
+}
+
+try {
+    console.log(permutacionesCadena('casa'));
+    // ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']
+} catch (e) {
+    console.log(`Error: ${e.message}`);
+}
+
+console.log();
+
+
+</script>
